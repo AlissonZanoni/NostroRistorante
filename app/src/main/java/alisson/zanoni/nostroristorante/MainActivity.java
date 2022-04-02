@@ -19,13 +19,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void trocarDeTela() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent splash = new Intent(MainActivity.this,LoginActivity.class);
-                startActivity(splash);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent splash = new Intent(MainActivity.this,LoginActivity.class);
+            startActivity(splash);
+            finish();
         },getTempoDeEspera );
     }
 }

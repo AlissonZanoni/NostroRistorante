@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,88 +7,104 @@
     android:background="@color/FundoClaro"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/gabrielaregular"
-        android:text="@string/tvCadastro"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:layout_marginTop="30sp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/idNomeCadastro"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="130dp"
-        android:hint="@string/hintNome"
-        android:fontFamily="@font/gabrielaregular"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gabrielaregular"
+            android:text="@string/tvCadastro"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_marginTop="30sp"/>
 
-    <EditText
-        android:id="@+id/idSobrenomeCadastro"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="15dp"
-        android:hint="@string/hintSobrenome"
-        android:fontFamily="@font/gabrielaregular"/>
+        <EditText
+            android:id="@+id/idNomeCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="130dp"
+            android:hint="@string/hintNome"
+            android:fontFamily="@font/gabrielaregular"/>
 
-    <EditText
-        android:id="@+id/idDateNascCadastro"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="15dp"
-        android:hint="@string/hintDataNascimento"
-        android:fontFamily="@font/gabrielaregular"/>
+        <EditText
+            android:id="@+id/idSobrenomeCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hintSobrenome"
+            android:fontFamily="@font/gabrielaregular"/>
 
-    <EditText
-        android:id="@+id/idEmailCadastro"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="15dp"
-        android:hint="@string/hintEmail"
-        android:fontFamily="@font/gabrielaregular"
-        android:inputType="textEmailAddress"/>
+        <EditText
+            android:id="@+id/idDateNascimentoCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hintDataNascimento"
+            android:fontFamily="@font/gabrielaregular"/>
 
-    <EditText
-        android:id="@+id/idSenhaCadastro"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="15dp"
-        android:hint="@string/hintSenha"
-        android:inputType="textPassword"
-        android:fontFamily="@font/gabrielaregular"/>
+        <EditText
+            android:id="@+id/idEmailCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hintEmail"
+            android:fontFamily="@font/gabrielaregular"
+            android:inputType="textEmailAddress"/>
 
-    <EditText
-        android:id="@+id/idConfirmarSenhaCadastro"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="15dp"
-        android:hint="@string/hintConfirmarSenha"
-        android:inputType="textPassword"
-        android:fontFamily="@font/gabrielaregular"/>
+        <EditText
+            android:id="@+id/idSenhaCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hintSenha"
+            android:inputType="textPassword"
+            android:fontFamily="@font/gabrielaregular"/>
 
-    <Button
-        android:id="@+id/idBtnCadastrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/custom_button_login"
-        android:text="Cadastrar"
-        android:textColor="@color/white"
-        android:fontFamily="@font/gabrielaregular"/>
+        <EditText
+            android:id="@+id/idConfirmarSenhaCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hintConfirmarSenha"
+            android:inputType="textPassword"
+            android:fontFamily="@font/gabrielaregular"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/idBtnBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="busca"/>
+
+        <Button
+            android:id="@+id/idBtnCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/custom_button_login"
+            android:text="Cadastrar"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gabrielaregular"/>
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
