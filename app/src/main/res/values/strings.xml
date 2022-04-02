@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">NostroRistorante</string>
+    <string name="hintEmail">Email</string>
+    <string name="hintSenha">Senha</string>
+    <string name="btnEntrar">Entrar</string>
+    <string name="btnCadastrar">Cadastre-se</string>
+    <string name="tvApresentacao1">Olá, Seja bem vindo ao Nostro Ristorante!\n\n Aqui você encontra o melhor da culinária italiana, com um tempero brasileiro todo especial!</string>
+    <string name="tvAndiamo">Andiamo</string>
+    <string name="tvCadastro">Per favore, informe seus dados para \n concluir o cadastro!</string>
+
+    <!-- Cadastro -->
+    <string name="hintNome">Nome</string>
+    <string name="hintSobrenome">Sobrenome</string>
+    <string name="hintDataNascimento">Data Nascimento</string>
+    <string name="hintConfirmarSenha">Confirmar Senha</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <!-- Home -->
+    <string name="hintCiao">Ciao,</string>
+</resources>

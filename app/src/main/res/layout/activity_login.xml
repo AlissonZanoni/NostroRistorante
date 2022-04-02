@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background="@color/VerdeEscuro">
+
+
+    <ImageView
+        android:src="@drawable/logoapp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"/>
+
+    <EditText
+        android:id="@+id/idEmailLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/usericon"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="@string/hintEmail"
+        android:fontFamily="@font/gabrielaregular"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_edittext_login"/>
+
+    <EditText
+        android:id="@+id/idSenhaLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/custom_edittext_login"
+        android:drawableStart="@drawable/passwordicon"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/gabrielaregular"
+        android:hint="@string/hintSenha"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Manter Conectecado"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gabrielaregular"
+            android:layout_marginTop="19dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/idBtnEntrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button_login"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btnEntrar"
+        android:textColor="@color/white"
+        android:fontFamily="@font/gabrielaregular"/>
+
+    <Button
+        android:id="@+id/idBtnRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_button_login"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btnCadastrar"
+        android:textColor="@color/white"
+        android:fontFamily="@font/gabrielaregular"/>
+
+</LinearLayout>
