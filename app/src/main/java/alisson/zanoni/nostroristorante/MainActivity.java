@@ -3,8 +3,10 @@ package alisson.zanoni.nostroristorante;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +17,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        trocarDeTela();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        boolean isChecked = preferences.getBoolean("manterConectado", false);
+        if(isChecked) {
+            new Handler().postDelayed(() -> {
+                ((Aplicacao) this.getApplication()).setUsuarioLogado(preferences.getString("usuarioLogado", "Usuário"));
+                Intent splash = new Intent(MainActivity.this,HomeActivity.class);
+                startActivity(splash);
+                finish();
+            },getTempoDeEspera );
+        } else {
+            trocarDeTela();
+        }
     }
 
     private void trocarDeTela() {

@@ -59,14 +59,6 @@ public class CadastroActivity extends AppCompatActivity {
                 Toast.makeText(CadastroActivity.this, "Preencha todos os campos.", Toast.LENGTH_SHORT).show();
             }
         });
-
-        Button btnBuscar = findViewById(R.id.idBtnBuscar);
-        btnBuscar.setOnClickListener(view -> {
-            ArrayList<String> usuarios = dao.SelectEmail();
-            for (String emailUsuario : usuarios) {
-                Toast.makeText(CadastroActivity.this, emailUsuario, Toast.LENGTH_SHORT).show();
-            }
-        });
     }
     public boolean validaEmail(String email) {
         ArrayList<String> emailsCadastrados = dao.SelectEmail();

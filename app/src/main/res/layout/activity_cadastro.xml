@@ -85,26 +85,16 @@
             android:fontFamily="@font/gabrielaregular"/>
 
         <Button
-            android:id="@+id/idBtnBuscar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="busca"/>
-
-        <Button
             android:id="@+id/idBtnCadastrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="130dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/custom_button_login"
             android:text="Cadastrar"
             android:textColor="@color/white"
             android:fontFamily="@font/gabrielaregular"/>
-
-
-
     </LinearLayout>
-
 
 </ScrollView>
