@@ -1,67 +1,50 @@
 package alisson.zanoni.nostroristorante;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Switch;
-import android.widget.Toast;
 
-import alisson.zanoni.nostroristorante.dao.UsuarioDAO;
-import alisson.zanoni.nostroristorante.model.UsuarioModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText editEmail, editSenha;
-    private Switch switchLogin;
-    UsuarioDAO dao;
+    private Button btnEntrar, btnRegistrar;
+    SharedPreferences preferences;
+    SharedPreferences.Editor edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        dao = new UsuarioDAO(LoginActivity.this);
+        iniciarComponentes();
 
-        editEmail = findViewById(R.id.idEmailLogin);
-        editSenha = findViewById(R.id.idSenhaLogin);
-        switchLogin = findViewById(R.id.switchLogin);
-
-        Button btnEntrar = findViewById(R.id.idBtnEntrar);
-        Button btnRegistrar = findViewById(R.id.idBtnRegistrar);
-
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
-        SharedPreferences.Editor edit = preferences.edit();
+        preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+        edit = preferences.edit();
 
         btnEntrar.setOnClickListener(view -> {
             String emailLogin = editEmail.getText().toString();
             String senhaLogin = editSenha.getText().toString();
 
-            if(!emailLogin.isEmpty() && !senhaLogin.isEmpty()) {
-                UsuarioModel usuario = dao.SelectUsuarioEmailLogin(emailLogin);
-                if(usuario != null) {
-                    if(usuario.getSenha().equals(senhaLogin)){
-                        ((Aplicacao) this.getApplication()).setUsuarioLogado(usuario.getNome());
-                        if(switchLogin.isChecked()){
-                            edit.putBoolean("manterConectado", true);
-                            edit.putString("usuarioLogado", usuario.getNome());
-                            edit.apply();
-                        }
-                        boolean telaApresentacaoJaVista = preferences.getBoolean("telaApresentacaoJaVista", false);
-                        if(!telaApresentacaoJaVista)
-                            trocarDeTela(ApresentacaoActivity.class);
-                        else
-                            trocarDeTela(HomeActivity.class);
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Senha inválida!", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
-                    Toast.makeText(LoginActivity.this, "Email não cadastrado!", Toast.LENGTH_SHORT).show();
-                }
+            if(emailLogin.isEmpty() || senhaLogin.isEmpty()) {
+                Snackbar snackbar = Snackbar.make(view, "Preencha todos os campos", Snackbar.LENGTH_SHORT);
+                snackbar.setBackgroundTint(Color.WHITE);
+                snackbar.setTextColor(Color.BLACK);
+                snackbar.show();
             } else {
-                Toast.makeText(LoginActivity.this, "Preencha todos os campos.", Toast.LENGTH_SHORT).show();
+                AutenticarUsuario(view, emailLogin, senhaLogin);
             }
         });
 
@@ -72,5 +55,38 @@ public class LoginActivity extends AppCompatActivity {
         Intent trocarTela = new Intent(LoginActivity.this,tela);
         startActivity(trocarTela);
         finish();
+    }
+
+    private void AutenticarUsuario(View view, String email, String senha) {
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    boolean telaApresentacaoJaVista = preferences.getBoolean("telaApresentacaoJaVista", false);
+                    if(!telaApresentacaoJaVista)
+                        trocarDeTela(ApresentacaoActivity.class);
+                    else
+                        trocarDeTela(HomeActivity.class);
+                } else {
+                    String erro;
+                    try {
+                        throw task.getException();
+                    } catch (Exception e) {
+                        erro = "Login inválido";
+                    }
+                    Snackbar snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+                }
+            }
+        });
+    }
+
+    private void iniciarComponentes() {
+        editEmail = findViewById(R.id.idEmailLogin);
+        editSenha = findViewById(R.id.idSenhaLogin);
+        btnEntrar = findViewById(R.id.idBtnEntrar);
+        btnRegistrar = findViewById(R.id.idBtnRegistrar);
     }
 }

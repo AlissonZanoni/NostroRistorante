@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "420362641576",
+    "project_id": "teste-5db7e",
+    "storage_bucket": "teste-5db7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420362641576:android:8ce09f140ad0f9fc58a29d",
+        "android_client_info": {
+          "package_name": "alisson.zanoni.nostroristorante"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420362641576-1d21h20hir7n470jvtm3j38osjf07088.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbTl5N4WbAMvE7qJPjkOzgc5vpiWuiIpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420362641576-1d21h20hir7n470jvtm3j38osjf07088.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
