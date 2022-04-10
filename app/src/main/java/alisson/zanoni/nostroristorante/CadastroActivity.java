@@ -26,7 +26,7 @@ import alisson.zanoni.nostroristorante.model.Usuario;
 
 public class CadastroActivity extends AppCompatActivity {
 
-    private EditText editNome, editSobrenome, editDataNascimento, editEmail, editSenha, editConfirmarSenha;
+    private EditText editNome, editSobrenome, editDataNascimento, editTelefone, editEmail, editSenha, editConfirmarSenha;
     UsuarioFireBaseRepository fireBaseRepository;
     String[] mensagens = {"Preencha todos os campos",
                           "As senhas precisam ser iguais"};
@@ -46,11 +46,12 @@ public class CadastroActivity extends AppCompatActivity {
             String nome = editNome.getText().toString();
             String sobrenome = editSobrenome.getText().toString();
             String dataNascimento = editDataNascimento.getText().toString();
+            String telefone = editTelefone.getText().toString();
             String email = editEmail.getText().toString().trim();
             String senha = editSenha.getText().toString().trim();
             String confirmarSenha = editConfirmarSenha.getText().toString();
 
-            if(nome.isEmpty() || sobrenome.isEmpty() || dataNascimento.isEmpty() || email.isEmpty() || senha.isEmpty() || confirmarSenha.isEmpty()) {
+            if(nome.isEmpty() || sobrenome.isEmpty() || dataNascimento.isEmpty() || telefone.isEmpty() || email.isEmpty() || senha.isEmpty() || confirmarSenha.isEmpty()) {
                 Snackbar snackbar = Snackbar.make(view, mensagens[0], Snackbar.LENGTH_SHORT);
                 snackbar.setBackgroundTint(Color.WHITE);
                 snackbar.setTextColor(Color.BLACK);
@@ -61,14 +62,14 @@ public class CadastroActivity extends AppCompatActivity {
                 snackbar.setTextColor(Color.BLACK);
                 snackbar.show();
             } else {
-                CadastrarUsuario(view, nome, sobrenome, dataNascimento, email, senha);
+                CadastrarUsuario(view, nome, sobrenome, dataNascimento, telefone, email, senha);
             }
         });
     }
 
-    private void SalvarDadosUsuario(String nome, String sobrenome, String dataNascimento) {
+    private void SalvarDadosUsuario(String nome, String sobrenome, String dataNascimento, String telefone) {
 
-        Usuario usuario = new Usuario(nome, sobrenome, dataNascimento);
+        Usuario usuario = new Usuario(nome, sobrenome, dataNascimento, telefone);
 
         fireBaseRepository.add(usuario).addOnSuccessListener(suc -> {
             Log.d("db", "Sucesso ao salvar os dados");
@@ -81,18 +82,19 @@ public class CadastroActivity extends AppCompatActivity {
         editNome = findViewById(R.id.idNomeCadastro);
         editSobrenome = findViewById(R.id.idSobrenomeCadastro);
         editDataNascimento = findViewById(R.id.idDateNascimentoCadastro);
+        editTelefone = findViewById(R.id.idTelefoneCadastro);
         editEmail = findViewById(R.id.idEmailCadastro);
         editSenha = findViewById(R.id.idSenhaCadastro);
         editConfirmarSenha = findViewById(R.id.idConfirmarSenhaCadastro);
     }
 
-    private void CadastrarUsuario(View view, String nome, String sobrenome, String dataNascimento, String email, String senha) {
+    private void CadastrarUsuario(View view, String nome, String sobrenome, String dataNascimento, String telefone, String email, String senha) {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
 
-                    SalvarDadosUsuario(nome, sobrenome, dataNascimento);
+                    SalvarDadosUsuario(nome, sobrenome, dataNascimento, telefone);
 
                     Toast.makeText(CadastroActivity.this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show();
 

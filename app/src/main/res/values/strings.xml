@@ -11,7 +11,8 @@
     <!-- Cadastro -->
     <string name="hintNome">Nome</string>
     <string name="hintSobrenome">Sobrenome</string>
-    <string name="hintDataNascimento">Data Nascimento</string>
+    <string name="hintDataNascimento">Data Nascimento. Ex.: 01/01/1990</string>
+    <string name="hintTelefone">Telefone</string>
     <string name="hintConfirmarSenha">Confirmar Senha</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Home</string>

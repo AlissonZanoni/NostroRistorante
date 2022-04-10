@@ -4,13 +4,15 @@ public class Usuario {
     private String Nome;
     private String Sobrenome;
     private String DataNascimento;
+    private String Telefone;
 
     public Usuario(){}
 
-    public Usuario(String nome, String sobrenome, String dataNascimento) {
+    public Usuario(String nome, String sobrenome, String dataNascimento, String telefone) {
         Nome = nome;
         Sobrenome = sobrenome;
         DataNascimento = dataNascimento;
+        Telefone = telefone;
     }
 
     public String getNome() {
@@ -35,6 +37,14 @@ public class Usuario {
 
     public void setDataNascimento(String dataNascimento) {
         DataNascimento = dataNascimento;
+    }
+
+    public String getTelefone() {
+        return Telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        Telefone = telefone;
     }
 
 
