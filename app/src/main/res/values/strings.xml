@@ -21,4 +21,5 @@
 
     <!-- Home -->
     <string name="hintCiao">Ciao,</string>
+    <string name="title_activity_teste">Teste</string>
 </resources>

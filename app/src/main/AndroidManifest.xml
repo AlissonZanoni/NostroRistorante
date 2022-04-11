@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NostroRistorante">
         <activity
+            android:name=".Teste"
+            android:exported="false"
+            android:label="@string/title_activity_teste" />
+        <activity
             android:name=".PerfilActivity"
             android:exported="false" />
         <activity

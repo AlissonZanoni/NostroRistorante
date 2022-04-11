@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +14,6 @@ import alisson.zanoni.nostroristorante.repository.UsuarioFireBaseRepository;
 public class HomeActivity extends AppCompatActivity{
 
     TextView textUsuarioLogado;
-    Button btnLogout, btnPerfil;
     UsuarioFireBaseRepository fireBaseRepository;
 
     @Override
@@ -26,17 +24,16 @@ public class HomeActivity extends AppCompatActivity{
         fireBaseRepository = new UsuarioFireBaseRepository();
 
         textUsuarioLogado = findViewById(R.id.usuarioLogado);
-        btnLogout = findViewById(R.id.idBtnLogout);
-        btnPerfil = findViewById(R.id.btnPerfil);
 
-        btnLogout.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
-            trocarDeTela(LoginActivity.class);
-        });
+//metodo para deslogar.
+//        btnLogout.setOnClickListener(view -> {
+//            FirebaseAuth.getInstance().signOut();
+//            trocarDeTela(LoginActivity.class);
+//        });
 
-        btnPerfil.setOnClickListener(view -> {
-            trocarDeTela(PerfilActivity.class);
-        });
+//        btnPerfil.setOnClickListener(view -> {
+//            trocarDeTela(PerfilActivity.class);
+//        });
     }
 
     @Override
