@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NostroRistorante">
         <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
@@ -31,4 +34,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

@@ -22,11 +22,32 @@ public class UsuarioFireBaseRepository {
         databaseReference = db.getReference(Usuario.class.getSimpleName());
     }
 
-    public interface MyCallback {
+    public interface callbackUsuario {
+        void onCallback(Usuario usuario);
+    }
+
+    public void getUsuario(String idUsuario, callbackUsuario myCallback) {
+        databaseReference.child(idUsuario).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Usuario user = snapshot.getValue(Usuario.class);
+                if(user != null) {
+                    myCallback.onCallback(user);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public interface callbackNome {
         void onCallback(String nomeUsuario);
     }
 
-    public void getNomeUsuario(String idUsuario, MyCallback myCallback) {
+    public void getNomeUsuario(String idUsuario, callbackNome myCallback) {
         databaseReference.child(idUsuario).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

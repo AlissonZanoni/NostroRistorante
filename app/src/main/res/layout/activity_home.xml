@@ -53,7 +53,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="561dp"
+        android:layout_marginTop="400dp"
         android:background="@color/VerdeEscuro"
         android:orientation="horizontal">
 
@@ -70,7 +70,8 @@
             android:layout_marginRight="70dp"
             android:src="@drawable/menuicon" />
 
-        <ImageView
+        <Button
+            android:id="@+id/btnPerfil"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/personicon" />
