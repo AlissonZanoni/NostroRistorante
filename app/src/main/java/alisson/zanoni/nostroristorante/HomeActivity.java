@@ -43,6 +43,7 @@ public class HomeActivity extends AppCompatActivity{
         super.onStart();
 
         textUsuarioLogado.setText("");
+
         String idUsuario = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         fireBaseRepository.getNomeUsuario(idUsuario, new UsuarioFireBaseRepository.callbackNome() {
