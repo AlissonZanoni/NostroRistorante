@@ -58,6 +58,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/testehome"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="60dp"

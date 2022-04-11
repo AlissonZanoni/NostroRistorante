@@ -32,7 +32,8 @@
             android:hint="@string/hintNome"
             android:textColor="@color/black"
             android:textColorHint="@color/blackhint"
-            android:fontFamily="@font/gabrielaregular"/>
+            android:fontFamily="@font/gabrielaregular"
+            android:backgroundTint="@color/VerdeEscuro"/>
 
         <EditText
             android:id="@+id/idSobrenomeCadastro"
@@ -44,7 +45,9 @@
             android:hint="@string/hintSobrenome"
             android:textColorHint="@color/blackhint"
             android:textColor="@color/black"
-            android:fontFamily="@font/gabrielaregular"/>
+            android:fontFamily="@font/gabrielaregular"
+            android:backgroundTint="@color/VerdeEscuro"/>
+
 
         <EditText
             android:id="@+id/idDateNascimentoCadastro"
@@ -56,7 +59,8 @@
             android:hint="@string/hintDataNascimento"
             android:textColorHint="@color/blackhint"
             android:textColor="@color/black"
-            android:fontFamily="@font/gabrielaregular"/>
+            android:fontFamily="@font/gabrielaregular"
+            android:backgroundTint="@color/VerdeEscuro"/>
 
         <EditText
             android:id="@+id/idTelefoneCadastro"
@@ -66,7 +70,9 @@
             android:layout_marginEnd="30dp"
             android:layout_marginTop="15dp"
             android:hint="@string/hintTelefone"
-            android:fontFamily="@font/gabrielaregular"/>
+            android:textColorHint="@color/blackhint"
+            android:fontFamily="@font/gabrielaregular"
+            android:backgroundTint="@color/VerdeEscuro"/>
 
         <EditText
             android:id="@+id/idEmailCadastro"
@@ -79,7 +85,9 @@
             android:textColorHint="@color/blackhint"
             android:textColor="@color/black"
             android:fontFamily="@font/gabrielaregular"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:backgroundTint="@color/VerdeEscuro"/>
+
 
         <EditText
             android:id="@+id/idSenhaCadastro"
@@ -92,7 +100,8 @@
             android:textColorHint="@color/blackhint"
             android:textColor="@color/black"
             android:inputType="textPassword"
-            android:fontFamily="@font/gabrielaregular"/>
+            android:fontFamily="@font/gabrielaregular"
+            android:backgroundTint="@color/VerdeEscuro"/>
 
         <EditText
             android:id="@+id/idConfirmarSenhaCadastro"
@@ -105,13 +114,14 @@
             android:textColorHint="@color/blackhint"
             android:textColor="@color/black"
             android:inputType="textPassword"
-            android:fontFamily="@font/gabrielaregular"/>
+            android:fontFamily="@font/gabrielaregular"
+            android:backgroundTint="@color/VerdeEscuro"/>
 
         <Button
             android:id="@+id/idBtnCadastrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="50dp"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/custom_button_login"
