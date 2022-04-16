@@ -29,7 +29,7 @@ public class ConfirmarReservaActivity extends AppCompatActivity {
         Bundle params = intent.getExtras();
         String data = params.getString("data");
         int qtdPessoas = params.getInt("qtdPessoas");
-        Boolean cadeiraBebe = params.getBoolean("cadeiraBebe");
+        Boolean cadeiraBebe = params.getBoolean("precisaCadeiraBebe");
         String observacoes = params.getString("observacoes");
         int mesa = params.getInt("mesa");
         String idUsuario = FirebaseAuth.getInstance().getCurrentUser().getUid();

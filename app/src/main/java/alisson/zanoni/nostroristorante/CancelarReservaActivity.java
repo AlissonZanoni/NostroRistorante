@@ -48,7 +48,7 @@ public class CancelarReservaActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Reserva reservaEscolhida = (Reserva) listaReservasCancelar.getItemAtPosition(i);
-                reservaFireBaseRepository.deletarReserva(idUsuario, reservaEscolhida.getNumeracaoMesa());
+                reservaFireBaseRepository.deletarReserva(idUsuario, reservaEscolhida);
                 mesaFireBaseRepository.updateStatus(reservaEscolhida.getNumeracaoMesa(), false);
                 Toast.makeText(CancelarReservaActivity.this, "Reserva deletada com sucesso!", Toast.LENGTH_SHORT).show();
                 Intent trocarTela = new Intent(CancelarReservaActivity.this, MenuReservaActivity.class);

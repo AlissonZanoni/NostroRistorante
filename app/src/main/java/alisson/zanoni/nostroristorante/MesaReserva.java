@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -45,6 +46,10 @@ public class MesaReserva extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Mesa mesaEscolhida = (Mesa) listaAndroid.getItemAtPosition(i);
+                if(mesaEscolhida.getStatus()) {
+                    Toast.makeText(MesaReserva.this, "Esta mesa já está reservada, por favor selecione outra.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 params.putInt("mesa", mesaEscolhida.getNumeracao());
                 Intent trocarTela = new Intent(MesaReserva.this,ConfirmarReservaActivity.class);
                 trocarTela.putExtras(params);

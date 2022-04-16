@@ -24,7 +24,7 @@ public class ReservaFireBaseRepository {
     }
 
     public Task<Void> add(Reserva reserva) {
-        return databaseReference.push().setValue(reserva);
+        return databaseReference.child(reserva.getIdUsuario()+"-"+reserva.getNumeracaoMesa()).setValue(reserva);
     }
 
     public interface callbackReservaPorUsuario {
@@ -56,8 +56,8 @@ public class ReservaFireBaseRepository {
         });
     }
 
-    public void deletarReserva(String idUsuario, int numeracaoMesa) {
-        databaseReference.orderByChild("idReserva").equalTo(idUsuario+"-"+numeracaoMesa).addValueEventListener(new ValueEventListener() {
+    public void deletarReserva(String idUsuario, Reserva reserva) {
+        databaseReference.child(idUsuario+"-"+reserva.getNumeracaoMesa()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 snapshot.getRef().removeValue();
