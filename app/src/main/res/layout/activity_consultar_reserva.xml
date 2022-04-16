@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ConsultarReservaActivity">
 
+    <TextView
+        android:id="@+id/listaVaziaConsultaReserva"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/black"
+        android:text=""
+        android:fontFamily="@font/gabrielaregular"
+        android:layout_gravity="center_vertical"
+        android:textSize="14sp"/>
+
     <ListView
         android:id="@+id/listaReservas"
         android:layout_width="match_parent"

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +22,7 @@ import alisson.zanoni.nostroristorante.repository.ReservaFireBaseRepository;
 public class CancelarReservaActivity extends AppCompatActivity {
 
     private ListView listaReservasCancelar;
+    TextView listaVaziaCancelarReserva;
     ReservaFireBaseRepository reservaFireBaseRepository;
     MesaFireBaseRepository mesaFireBaseRepository;
 
@@ -31,6 +33,7 @@ public class CancelarReservaActivity extends AppCompatActivity {
 
         listaReservasCancelar = findViewById(R.id.listaReservasCancelar);
         mesaFireBaseRepository = new MesaFireBaseRepository();
+        listaVaziaCancelarReserva = findViewById(R.id.listaVaziaCancelarReserva);
 
         reservaFireBaseRepository = new ReservaFireBaseRepository();
         String idUsuario =  FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -38,8 +41,13 @@ public class CancelarReservaActivity extends AppCompatActivity {
         reservaFireBaseRepository.getReservasPorUsuario(idUsuario, new ReservaFireBaseRepository.callbackReservaPorUsuario() {
             @Override
             public void onCallback(List<Reserva> reservas) {
-                ArrayAdapter<Reserva> adapter = new ArrayAdapter<Reserva>(CancelarReservaActivity.this, android.R.layout.simple_list_item_1, reservas);
-                listaReservasCancelar.setAdapter(adapter);
+                if(reservas.size() == 0){
+                    listaVaziaCancelarReserva.setText("Você não possui reservas.");
+                } else {
+                    listaVaziaCancelarReserva.setText("Reservas ativas:");
+                    ArrayAdapter<Reserva> adapter = new ArrayAdapter<Reserva>(CancelarReservaActivity.this, android.R.layout.simple_list_item_1, reservas);
+                    listaReservasCancelar.setAdapter(adapter);
+                }
             }
         });
 
