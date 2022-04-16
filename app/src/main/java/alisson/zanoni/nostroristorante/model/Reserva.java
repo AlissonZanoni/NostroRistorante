@@ -66,4 +66,8 @@ public class Reserva {
     public void setNumeracaoMesa(int numeracaoMesa) {
         NumeracaoMesa = numeracaoMesa;
     }
+
+    @Override public String toString() {
+        return "DataReserva: " + DataReserva + " Quantidade de Pessoas: " + QuantidadePessoas + " PrecisaCadeirinhaBebe: " + PrecisaCadeirinhaBebe + " Observacoes: " + Observacoes + " NumeracaoMesa: " + NumeracaoMesa;
+    }
 }
