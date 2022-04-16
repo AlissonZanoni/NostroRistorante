@@ -10,9 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NostroRistorante">
         <activity
-            android:name=".Teste"
-            android:exported="false"
-            android:label="@string/title_activity_teste" />
+            android:name=".ConfirmarReservaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MesaReserva"
+            android:exported="false" />
+        <activity
+            android:name=".ReservaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuReservaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CardapioTipoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CardapioActivity"
+            android:exported="false" />
         <activity
             android:name=".PerfilActivity"
             android:exported="false" />

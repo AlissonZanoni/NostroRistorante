@@ -9,12 +9,16 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import alisson.zanoni.nostroristorante.model.Comida;
+import alisson.zanoni.nostroristorante.repository.ComidaFireBaseRepository;
 import alisson.zanoni.nostroristorante.repository.UsuarioFireBaseRepository;
 
 public class HomeActivity extends AppCompatActivity{
 
     TextView textUsuarioLogado;
+    Button btnMenu;
     UsuarioFireBaseRepository fireBaseRepository;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +26,10 @@ public class HomeActivity extends AppCompatActivity{
         setContentView(R.layout.activity_home);
 
         fireBaseRepository = new UsuarioFireBaseRepository();
-
         textUsuarioLogado = findViewById(R.id.usuarioLogado);
+        btnMenu = findViewById(R.id.BtnMenu);
+
+        btnMenu.setOnClickListener(view -> trocarDeTela(MenuActivity.class));
 
 //metodo para deslogar.
 //        btnLogout.setOnClickListener(view -> {
@@ -47,9 +53,9 @@ public class HomeActivity extends AppCompatActivity{
         fireBaseRepository.getNomeUsuario(idUsuario, new UsuarioFireBaseRepository.callbackNome() {
             @Override
             public void onCallback(String nomeUsuario) {
-                if(nomeUsuario != null)
-                    textUsuarioLogado.setText(" "+nomeUsuario);
-                else {
+                if(nomeUsuario != null) {
+                    textUsuarioLogado.setText(" " + nomeUsuario);
+                } else {
                     Toast.makeText(HomeActivity.this, "Falha ao buscar os dados do usuário", Toast.LENGTH_SHORT).show();
                     FirebaseAuth.getInstance().signOut();
                     Intent logout = new Intent(HomeActivity.this,LoginActivity.class);
