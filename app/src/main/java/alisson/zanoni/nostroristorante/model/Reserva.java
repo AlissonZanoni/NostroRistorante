@@ -1,6 +1,7 @@
 package alisson.zanoni.nostroristorante.model;
 
 public class Reserva {
+    private String IdReserva;
     private String DataReserva;
     private int QuantidadePessoas;
     private Boolean PrecisaCadeirinhaBebe;
@@ -10,13 +11,22 @@ public class Reserva {
 
     public Reserva() {}
 
-    public Reserva(String dataReserva, int quantidadePessoas, Boolean precisaCadeirinhaBebe, String observacoes, String idUsuario, int numeracaoMesa) {
+    public Reserva(String idReserva, String dataReserva, int quantidadePessoas, Boolean precisaCadeirinhaBebe, String observacoes, String idUsuario, int numeracaoMesa) {
+        IdReserva = idReserva;
         DataReserva = dataReserva;
         QuantidadePessoas = quantidadePessoas;
         PrecisaCadeirinhaBebe = precisaCadeirinhaBebe;
         Observacoes = observacoes;
         IdUsuario = idUsuario;
         NumeracaoMesa = numeracaoMesa;
+    }
+
+    public String getIdReserva() {
+        return IdReserva;
+    }
+
+    public void setIdReserva(String idReserva) {
+        IdReserva = idReserva;
     }
 
     public String getDataReserva() {

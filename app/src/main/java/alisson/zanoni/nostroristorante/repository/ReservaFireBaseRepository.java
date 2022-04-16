@@ -55,4 +55,18 @@ public class ReservaFireBaseRepository {
             }
         });
     }
+
+    public void deletarReserva(String idUsuario, int numeracaoMesa) {
+        databaseReference.orderByChild("idReserva").equalTo(idUsuario+"-"+numeracaoMesa).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                snapshot.getRef().removeValue();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }

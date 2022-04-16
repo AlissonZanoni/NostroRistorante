@@ -32,7 +32,9 @@ public class ConfirmarReservaActivity extends AppCompatActivity {
         Boolean cadeiraBebe = params.getBoolean("cadeiraBebe");
         String observacoes = params.getString("observacoes");
         int mesa = params.getInt("mesa");
-        Reserva reserva = new Reserva(data, qtdPessoas, cadeiraBebe, observacoes, FirebaseAuth.getInstance().getCurrentUser().getUid(), mesa);
+        String idUsuario = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String idReserva = idUsuario + "-" + mesa;
+        Reserva reserva = new Reserva(idReserva, data, qtdPessoas, cadeiraBebe, observacoes, idUsuario, mesa);
         reservaFireBaseRepository.add(reserva).addOnSuccessListener(suc -> {
 
             mesaFireBaseRepository.updateStatus(mesa, true);

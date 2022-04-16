@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MenuReservaActivity extends AppCompatActivity {
 
-    Button btnReservar, btnConsultarReserva;
+    Button btnReservar, btnConsultarReserva, btnCancelarReserva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +17,11 @@ public class MenuReservaActivity extends AppCompatActivity {
 
         btnReservar = findViewById(R.id.BtnReservar);
         btnConsultarReserva = findViewById(R.id.BtnConsultarReserva);
+        btnCancelarReserva = findViewById(R.id.BtnCancelarReserva);
 
         btnReservar.setOnClickListener(view -> trocarDeTela(ReservaActivity.class));
         btnConsultarReserva.setOnClickListener(view -> trocarDeTela(ConsultarReservaActivity.class));
+        btnCancelarReserva.setOnClickListener(view -> trocarDeTela(CancelarReservaActivity.class));
     }
 
     public void trocarDeTela(Class tela){
