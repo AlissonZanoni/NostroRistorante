@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".CancelarReservaActivity">
 
     <ListView
@@ -11,7 +12,7 @@
         android:layout_height="match_parent"/>
 
     <TextView
-        android:id="@+id/listaVaziaCancelarReserva"
+        android:id="@+id/listaVaziaConsultaReserva"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textColor="@color/black"
