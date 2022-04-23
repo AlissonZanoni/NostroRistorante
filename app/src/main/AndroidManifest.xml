@@ -28,16 +28,10 @@
             android:name=".MenuReservaActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
-            android:exported="false" />
-        <activity
             android:name=".CardapioTipoActivity"
             android:exported="false" />
         <activity
             android:name=".CardapioActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PerfilActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"

@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/FundoClaro">
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/nav_host_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -19,8 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_main"/>
-
-
 
     <LinearLayout
         android:id="@+id/bottomNavigationView"
@@ -50,6 +48,7 @@
                 android:text="Início"
                 android:layout_marginBottom="2dp"
                 android:layout_gravity="center"
+                android:fontFamily="@font/gabrielaregular"
                 android:textColor="@color/white"/>
 
         </LinearLayout>
@@ -73,6 +72,7 @@
                 android:text="Menu"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
+                android:fontFamily="@font/gabrielaregular"
                 android:layout_marginBottom="2dp"/>
         </LinearLayout>
 
@@ -95,6 +95,7 @@
                 android:text="Perfil"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
+                android:fontFamily="@font/gabrielaregular"
                 android:layout_marginBottom="2dp"/>
         </LinearLayout>
 
