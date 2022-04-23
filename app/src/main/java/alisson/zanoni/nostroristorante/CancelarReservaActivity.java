@@ -33,7 +33,7 @@ public class CancelarReservaActivity extends AppCompatActivity {
 
         listaReservasCancelar = findViewById(R.id.listaReservasCancelar);
         mesaFireBaseRepository = new MesaFireBaseRepository();
-        listaVaziaCancelarReserva = findViewById(R.id.listaVaziaCancelarReserva);
+       // listaVaziaCancelarReserva = findViewById(R.id.listaVaziaCancelarReserva);
 
         reservaFireBaseRepository = new ReservaFireBaseRepository();
         String idUsuario =  FirebaseAuth.getInstance().getCurrentUser().getUid();
