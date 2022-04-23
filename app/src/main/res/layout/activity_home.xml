@@ -20,14 +20,95 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_main"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+
+
+    <LinearLayout
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
         android:background="@color/VerdeEscuro"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_navmenu" />
+        android:orientation="horizontal">
+
+        <!--Inicio-->
+        <LinearLayout
+            android:id="@+id/layoutInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="40dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/homeicon"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Início"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <!--Menu-->
+        <LinearLayout
+            android:id="@+id/layoutMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="100dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/menuicon"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginBottom="2dp"/>
+        </LinearLayout>
+
+        <!--Perfil-->
+        <LinearLayout
+            android:id="@+id/layoutPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="100dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/personicon"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginBottom="2dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottomNavigationView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/VerdeEscuro"-->
+<!--        app:itemIconTint="@color/white"-->
+<!--        app:itemTextColor="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:menu="@menu/bottom_navmenu" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

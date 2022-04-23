@@ -7,7 +7,9 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,28 +17,66 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import alisson.zanoni.nostroristorante.databinding.ActivityHomeBinding;
 import alisson.zanoni.nostroristorante.databinding.ActivityMainBinding;
+import alisson.zanoni.nostroristorante.fragments.HomeFragment;
+import alisson.zanoni.nostroristorante.fragments.MenuFragment;
+import alisson.zanoni.nostroristorante.fragments.PerfilFragment;
 import alisson.zanoni.nostroristorante.model.Comida;
 import alisson.zanoni.nostroristorante.repository.ComidaFireBaseRepository;
 import alisson.zanoni.nostroristorante.repository.UsuarioFireBaseRepository;
 
 public class HomeActivity extends AppCompatActivity{
 
-    private ActivityHomeBinding binding;
-    private NavHostFragment navHostFragment;
-    private NavController navController;
+//    private ActivityHomeBinding binding;
+//    private NavHostFragment navHostFragment;
+//    private NavController navController;
 
 ////    TextView textUsuarioLogado;
 //   // Button btnMenu;
 //    UsuarioFireBaseRepository fireBaseRepository;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        initNavigation();
+
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new HomeFragment())
+                    .commit();
+        }
+
+        LinearLayout layoutInicio = (LinearLayout) findViewById(R.id.layoutInicio);
+        layoutInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new HomeFragment())
+                        .commit();
+            }
+        });
+
+        LinearLayout layoutMenu = (LinearLayout) findViewById(R.id.layoutMenu);
+        layoutMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new MenuFragment())
+                        .commit();
+            }
+        });
+
+        LinearLayout layoutPerfil = (LinearLayout) findViewById(R.id.layoutPerfil);
+        layoutPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new PerfilFragment())
+                        .commit();
+            }
+        });
+
+
+
+
+//        binding = ActivityHomeBinding.inflate(getLayoutInflater());
+//        setContentView(binding.getRoot());
+//        initNavigation();
 
 //        fireBaseRepository = new UsuarioFireBaseRepository();
        // textUsuarioLogado = findViewById(R.id.usuarioLogado);
@@ -55,11 +95,11 @@ public class HomeActivity extends AppCompatActivity{
 //        });
     }
 
-     private void initNavigation(){
-        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-        navController = navHostFragment.getNavController();
-        NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
-    }
+//     private void initNavigation(){
+//        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+//        navController = navHostFragment.getNavController();
+//        NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
+//    }
 
 
 
