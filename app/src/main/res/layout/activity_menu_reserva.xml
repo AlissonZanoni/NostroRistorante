@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuReservaActivity"
+    android:orientation="vertical"
+    android:background="@color/FundoClaro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/BtnConsultarReserva"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Consultar Reservas"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/BtnReservar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Reservar"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/BtnCancelarReserva"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Cancelar Reserva"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navmenu"
+        app:itemTextColor="@color/white"
+        android:background="@color/VerdeEscuro"
+        app:itemIconTint="@color/white"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

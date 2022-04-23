@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilActivity"
+    tools:context=".ConfirmarReservaActivity"
     android:orientation="vertical"
     android:background="@color/FundoClaro">
 
@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nome"
+            android:id="@+id/confirmarDataReserva"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textColor="@color/black"
@@ -23,7 +23,7 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@+id/sobrenome"
+            android:id="@+id/confirmarQtdPessoas"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textColor="@color/black"
@@ -33,7 +33,7 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@+id/dataNascimento"
+            android:id="@+id/confirmarPrecisaCadeiraBebe"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textColor="@color/black"
@@ -43,7 +43,7 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@+id/telefone"
+            android:id="@+id/confirmarObservacoes"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textColor="@color/black"
@@ -52,41 +52,18 @@
             android:layout_gravity="center_vertical"
             android:textSize="14sp"/>
 
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:textColor="@color/black"
-            android:text=""
-            android:fontFamily="@font/gabrielaregular"
-            android:layout_gravity="center_vertical"
-            android:textSize="14sp"/>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/idBtnConfirmarReserva"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="682dp"
-            android:background="@color/VerdeEscuro"
-            android:orientation="horizontal">
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/custom_button_login"
+            android:text="Confirmar Reserva"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gabrielaregular"/>
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="60dp"
-                android:src="@drawable/homeicon" />
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
-                android:src="@drawable/menuicon" />
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/personicon" />
-        </LinearLayout>
     </LinearLayout>
 </ScrollView>
 
