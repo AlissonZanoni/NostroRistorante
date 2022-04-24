@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import alisson.zanoni.nostroristorante.CardapioActivity;
 import alisson.zanoni.nostroristorante.MenuReservaActivity;
@@ -21,7 +22,7 @@ public class MenuFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    Button btnCardapio, btnReservaCancelamento;
+    LinearLayout btnCardapio, btnReservaCancelamento;
 
     private String mParam1;
     private String mParam2;
