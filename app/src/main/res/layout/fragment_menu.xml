@@ -4,33 +4,150 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.MenuFragment"
-    android:background="@color/black">
+    android:background="@color/FundoClaro">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/VerdeEscuro">
 
-        <Button
-            android:id="@+id/BtnCardapio"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Cardápio"
-            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menuTitle"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/gabrielaregular"
+            android:layout_gravity="center"
+            android:textSize="18sp"/>
 
-        <Button
-            android:id="@+id/BtnReservaCancelamento"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Reservas e Cancelamentos"
-            android:textColor="@color/black" />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/imgheader"
+            android:layout_gravity="center"
+            android:layout_marginStart="250dp"/>
 
-        <Button
-            android:id="@+id/BtnContato"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Contatos"
-            android:textColor="@color/black" />
     </LinearLayout>
+
+
+    <!--Cardápio-->
+    <LinearLayout
+        android:id="@+id/BtnCardapio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cardapioTitle"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/gabrielaregular"
+                android:textColor="@color/VerdeEscuro"
+                android:layout_gravity="center"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowicon"
+                android:layout_marginStart="265dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/VerdeEscuro"/>
+    </LinearLayout>
+
+
+    <!--ReservaCancelamento-->
+    <LinearLayout
+        android:id="@+id/BtnReservaCancelamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="150dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reservascancelamentosTitle"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/gabrielaregular"
+                android:textColor="@color/VerdeEscuro"
+                android:layout_gravity="center"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowicon"
+                android:layout_marginStart="120dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/VerdeEscuro"/>
+    </LinearLayout>
+
+    <!--Contato-->
+    <LinearLayout
+        android:id="@+id/BtnContato"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="200dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contatoTitle"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/gabrielaregular"
+                android:textColor="@color/VerdeEscuro"
+                android:layout_gravity="center"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowicon"
+                android:layout_marginStart="275dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/VerdeEscuro"/>
+    </LinearLayout>
+
 </FrameLayout>

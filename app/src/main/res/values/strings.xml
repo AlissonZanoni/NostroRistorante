@@ -22,6 +22,25 @@
     <!-- Home -->
     <string name="hintCiao">Ciao,</string>
     <string name="title_activity_teste">Teste</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--MenusTitle    -->
+    <string name="menuTitle">Menu</string>
+    <string name="reservarTitle">Reservar</string>
+    <string name="cancelarreservarTitle">Cancelar reserva</string>
+    <string name="cardapioTitle">Cardápio</string>
+    <string name="contatoTitle">Contato</string>
+    <string name="reservascancelamentosTitle">Reservas e Cancelamentos</string>
+    <string name="cardapiomassasTitle">Cardápio/Massas</string>
+    <string name="consultarreservasTitle">Consultar Reservas</string>
+
+    <!--Cardapio    -->
+    <string name="entrada">Entradas</string>
+    <string name="acompanhamentos">Acompanhamentos</string>
+    <string name="massas">Massas</string>
+    <string name="risotos">Risotos</string>
+    <string name="Carnes">Carnes</string>
+    <string name="doces">Doces/Sobremesas</string>
+    <string name="Bebidas">Bebidas</string>
+    <string name="Vinhos">Vinhos</string>
+    <string name="Cervejas">Cervejas</string>
 </resources>
