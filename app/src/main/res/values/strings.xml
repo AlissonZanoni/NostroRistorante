@@ -31,4 +31,14 @@
     <string name="cardapiomassasTitle">Cardápio/Massas</string>
     <string name="consultarreservasTitle">Consultar Reservas</string>
 
+    <!--Cardapio    -->
+    <string name="entrada">Entradas</string>
+    <string name="acompanhamentos">Acompanhamentos</string>
+    <string name="massas">Massas</string>
+    <string name="risotos">Risotos</string>
+    <string name="Carnes">Carnes</string>
+    <string name="doces">Doces/Sobremesas</string>
+    <string name="Bebidas">Bebidas</string>
+    <string name="Vinhos">Vinhos</string>
+    <string name="Cervejas">Cervejas</string>
 </resources>
