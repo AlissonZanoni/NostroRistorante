@@ -25,6 +25,8 @@
 
     <!--MenusTitle    -->
     <string name="menuTitle">Menu</string>
+    <string name="reservarTitle">Reservar</string>
+    <string name="cancelarreservarTitle">Cancelar reserva</string>
     <string name="cardapioTitle">Cardápio</string>
     <string name="contatoTitle">Contato</string>
     <string name="reservascancelamentosTitle">Reservas e Cancelamentos</string>
