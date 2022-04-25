@@ -14,9 +14,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.firebase.auth.FirebaseAuth;
 
-import alisson.zanoni.nostroristorante.HomeActivity;
+import java.util.ArrayList;
+import java.util.List;
+
 import alisson.zanoni.nostroristorante.LoginActivity;
 import alisson.zanoni.nostroristorante.R;
 import alisson.zanoni.nostroristorante.repository.UsuarioFireBaseRepository;
@@ -29,6 +33,7 @@ public class HomeFragment extends Fragment {
     TextView textUsuarioLogado;
     Button btnMenu;
     UsuarioFireBaseRepository fireBaseRepository;
+    ImageSlider imageSlider;
 
     private String mParam1;
     private String mParam2;
@@ -49,6 +54,8 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -60,6 +67,18 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         textUsuarioLogado = view.findViewById(R.id.usuarioLogado);
+        imageSlider = getView().findViewById(R.id.image_slider);
+
+        List<SlideModel> slideModelList=new ArrayList<>();
+
+        slideModelList.add(new SlideModel(R.drawable.primeiraimg));
+        slideModelList.add(new SlideModel(R.drawable.segundaimg));
+        slideModelList.add(new SlideModel(R.drawable.terceiraimg));
+        slideModelList.add(new SlideModel(R.drawable.quartaimg));
+        slideModelList.add(new SlideModel(R.drawable.quintaimg));
+        slideModelList.add(new SlideModel(R.drawable.sextaimg));
+
+        imageSlider.setImageList(slideModelList,true);
     }
 
     @Override

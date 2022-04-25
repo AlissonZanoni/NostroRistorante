@@ -8,7 +8,7 @@
     <string name="tvAndiamo">Andiamo</string>
     <string name="tvCadastro">Per favore, informe seus dados para \n concluir o cadastro!</string>
 
-    <!-- Cadastro -->
+    <!--Cadastro-->
     <string name="hintNome">Nome</string>
     <string name="hintSobrenome">Sobrenome</string>
     <string name="hintDataNascimento">Data Nascimento. Ex.: 01/01/1990</string>
@@ -19,11 +19,11 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <!-- Home -->
+    <!--Home-->
     <string name="hintCiao">Ciao,</string>
     <string name="title_activity_teste">Teste</string>
 
-    <!--MenusTitle    -->
+    <!--MenusTitle-->
     <string name="menuTitle">Menu</string>
     <string name="reservarTitle">Reservar</string>
     <string name="cancelarreservarTitle">Cancelar reserva</string>
@@ -33,7 +33,7 @@
     <string name="cardapiomassasTitle">Cardápio/Massas</string>
     <string name="consultarreservasTitle">Consultar Reservas</string>
 
-    <!--Cardapio    -->
+    <!--Cardapio-->
     <string name="entrada">Entradas</string>
     <string name="acompanhamentos">Acompanhamentos</string>
     <string name="massas">Massas</string>

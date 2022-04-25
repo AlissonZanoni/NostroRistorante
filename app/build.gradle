@@ -45,5 +45,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
     implementation platform('com.google.firebase:firebase-bom:29.3.0')
     implementation 'com.google.firebase:firebase-auth'
-    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
 }
