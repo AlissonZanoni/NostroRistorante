@@ -10,11 +10,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import alisson.zanoni.nostroristorante.LoginActivity;
 import alisson.zanoni.nostroristorante.R;
 import alisson.zanoni.nostroristorante.model.Usuario;
 import alisson.zanoni.nostroristorante.repository.UsuarioFireBaseRepository;
@@ -24,8 +26,9 @@ public class PerfilFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    TextView textNome, textSobrenome, textDataNascimento, textTelefone, textEmail;
+    TextView textNome, textDataNascimento, textTelefone, textEmail;
     UsuarioFireBaseRepository fireBaseRepository;
+    Button btnDesconectar;
 
     private String mParam1;
     private String mParam2;
@@ -57,10 +60,10 @@ public class PerfilFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         textNome = view.findViewById(R.id.nome);
-        textSobrenome = view.findViewById(R.id.sobrenome);
         textDataNascimento = view.findViewById(R.id.dataNascimento);
         textTelefone = view.findViewById(R.id.telefone);
         textEmail = view.findViewById(R.id.email);
+        btnDesconectar = view.findViewById(R.id.btnDesconectar);
     }
 
     @Override
@@ -74,8 +77,12 @@ public class PerfilFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
+        //Metodo para deslogar
+        btnDesconectar.setOnClickListener(view -> {
+        FirebaseAuth.getInstance().signOut();
+        trocarDeTela(LoginActivity.class); });
+
         textNome.setText("");
-        textSobrenome.setText("");
         textDataNascimento.setText("");
         textTelefone.setText("");
         textEmail.setText("");
@@ -85,8 +92,7 @@ public class PerfilFragment extends Fragment {
             @Override
             public void onCallback(Usuario usuario) {
                 if(usuario != null) {
-                    textNome.setText(usuario.getNome());
-                    textSobrenome.setText(usuario.getSobrenome());
+                    textNome.setText(usuario.getNome()+" "+ usuario.getSobrenome());
                     textDataNascimento.setText(usuario.getDataNascimento());
                     textTelefone.setText(usuario.getTelefone());
                     textEmail.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());

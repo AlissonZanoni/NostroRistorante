@@ -23,9 +23,13 @@
     <string name="hintCiao">Ciao,</string>
     <string name="title_activity_teste">Teste</string>
 
+    <!--Perfil-->
+    <string name="btnDesconectar">Desconectar</string>
+
     <!--MenusTitle-->
     <string name="menuTitle">Menu</string>
     <string name="reservarTitle">Reservar</string>
+    <string name="perfilTitle">Perfil</string>
     <string name="cancelarreservarTitle">Cancelar reserva</string>
     <string name="cardapioTitle">Cardápio</string>
     <string name="contatoTitle">Contato</string>

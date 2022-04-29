@@ -41,25 +41,33 @@
         android:layout_marginTop="100dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cardapioTitle"
-                android:layout_marginStart="20dp"
                 android:fontFamily="@font/gabrielaregular"
                 android:textColor="@color/VerdeEscuro"
                 android:layout_gravity="center"
                 android:textSize="16sp"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrowicon"
-                android:layout_marginStart="265dp"/>
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrowicon"/>
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -81,25 +89,34 @@
         android:layout_marginTop="150dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reservascancelamentosTitle"
-                android:layout_marginStart="20dp"
                 android:fontFamily="@font/gabrielaregular"
                 android:textColor="@color/VerdeEscuro"
                 android:layout_gravity="center"
                 android:textSize="16sp"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrowicon"
-                android:layout_marginStart="120dp"/>
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrowicon"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -120,25 +137,34 @@
         android:layout_marginTop="200dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/contatoTitle"
-                android:layout_marginStart="20dp"
                 android:fontFamily="@font/gabrielaregular"
                 android:textColor="@color/VerdeEscuro"
                 android:layout_gravity="center"
                 android:textSize="16sp"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrowicon"
-                android:layout_marginStart="275dp"/>
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrowicon"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout

@@ -48,11 +48,5 @@ public class HomeActivity extends AppCompatActivity{
                         .commit();
             }
         });
-
-//        btnLogout.setOnClickListener(view -> {
-//            FirebaseAuth.getInstance().signOut();
-//            trocarDeTela(LoginActivity.class);
-//        });
-
     }
 }

@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 public class CardapioActivity extends AppCompatActivity implements View.OnClickListener {
 
     LinearLayout btnEntrada, btnAcompanhamento, btnMassa, btnRisoto, btnCarne, btnDoce, btnBebida, btnVinho, btnCerveja;
-    public static final int telaParams = 1;
+
     Bundle params;
 
     @Override
@@ -76,7 +76,6 @@ public class CardapioActivity extends AppCompatActivity implements View.OnClickL
         params.putString("tipo", tipo);
         Intent trocarTela = new Intent(CardapioActivity.this,CardapioTipoActivity.class);
         trocarTela.putExtras(params);
-        startActivityForResult(trocarTela, telaParams);
-        finish();
+        startActivity(trocarTela);
     }
 }
