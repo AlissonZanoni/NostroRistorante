@@ -10,61 +10,146 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+    <!--Header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/VerdeEscuro">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cardapioTitle"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/gabrielaregular"
+            android:layout_gravity="center"
+            android:textSize="18sp"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/imgheader"
+            android:layout_gravity="center"
+            android:layout_marginStart="230dp"/>
+    </LinearLayout>
+
+    <!--Mensagem-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/idDataReserva"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="130dp"
-            android:hint="Data Reserva"
-            android:textColor="@color/black"
-            android:textColorHint="@color/blackhint"
-            android:fontFamily="@font/gabrielaregular"
-            android:backgroundTint="@color/VerdeEscuro"/>
-
-        <EditText
-            android:id="@+id/idQtdPessoas"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msgReservar"
+            android:layout_gravity="center"
+            android:textAlignment="center"
             android:layout_marginTop="15dp"
-            android:hint="Quantidade de Pessoas"
-            android:textColorHint="@color/blackhint"
-            android:textColor="@color/black"
             android:fontFamily="@font/gabrielaregular"
-            android:backgroundTint="@color/VerdeEscuro"/>
+            android:textColor="@color/VerdeEscuro"
+            android:textSize="18sp"/>
+    </LinearLayout>
 
+    <!--Body-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/idCadeiraBebe"
+    <!--Data da Reserva-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data de reserva"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="14sp"
+        android:textColor="@color/VerdeEscuro"
+        android:fontFamily="@font/gabrielaregular"/>
+    <EditText
+        android:id="@+id/ed_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:textColorHint="@color/blackhint"
+        android:textColor="@color/VerdeEscuro"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/VerdeEscuro"
+        android:layout_marginRight="20dp"
+
+        android:drawableEnd="@drawable/calendarioicon"
+        android:fontFamily="@font/gabrielaregular"/>
+
+    <!--Quantidade de pessoas-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quantidade de pessoas"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="14sp"
+        android:textColor="@color/VerdeEscuro"
+        android:fontFamily="@font/gabrielaregular"/>
+    <EditText
+        android:id="@+id/confirmarQtdPessoas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/blackhint"
+        android:textColor="@color/VerdeEscuro"
+        android:layout_marginLeft="20dp"
+        android:backgroundTint="@color/VerdeEscuro"
+        android:layout_marginRight="20dp"
+        android:inputType="number"
+        android:fontFamily="@font/gabrielaregular"/>
+
+    <!--Cadeira para criança-->
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadeira para criança"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/VerdeEscuro"
+            android:fontFamily="@font/gabrielaregular"/>
+    <Spinner
+            android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="15dp"
-            android:hint="Cadeira bebe"
-            android:textColorHint="@color/blackhint"
-            android:textColor="@color/black"
-            android:fontFamily="@font/gabrielaregular"
-            android:backgroundTint="@color/VerdeEscuro"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:spinnerMode="dropdown"
+            android:entries="@array/Spinner_Itens"/>
 
-        <EditText
-            android:id="@+id/idObservacoes"
+    <!--Observação-->
+    <TextView
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="15dp"
-            android:hint="Observações"
+            android:layout_height="wrap_content"
+            android:text="Observação"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/VerdeEscuro"
+            android:fontFamily="@font/gabrielaregular"/>
+    <EditText
+            android:id="@+id/observacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textColorHint="@color/blackhint"
-            android:fontFamily="@font/gabrielaregular"
-            android:backgroundTint="@color/VerdeEscuro"/>
+            android:textColor="@color/VerdeEscuro"
+            android:layout_marginLeft="20dp"
+            android:backgroundTint="@color/VerdeEscuro"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/gabrielaregular"/>
 
-        <Button
+    <!--Botão-->
+    <Button
             android:id="@+id/idBtnEscolherMesa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,6 +160,92 @@
             android:text="Escolher Mesa"
             android:textColor="@color/white"
             android:fontFamily="@font/gabrielaregular"/>
-    </LinearLayout>
 
+
+    </LinearLayout>
+    </LinearLayout>
 </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/idDataReserva"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginTop="130dp"-->
+<!--            android:hint="Data Reserva"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textColorHint="@color/blackhint"-->
+<!--            android:fontFamily="@font/gabrielaregular"-->
+<!--            android:backgroundTint="@color/VerdeEscuro"/>-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/idQtdPessoas"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:hint="Quantidade de Pessoas"-->
+<!--            android:textColorHint="@color/blackhint"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:fontFamily="@font/gabrielaregular"-->
+<!--            android:backgroundTint="@color/VerdeEscuro"/>-->
+
+
+<!--        <EditText-->
+<!--            android:id="@+id/idCadeiraBebe"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:hint="Cadeira bebe"-->
+<!--            android:textColorHint="@color/blackhint"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:fontFamily="@font/gabrielaregular"-->
+<!--            android:backgroundTint="@color/VerdeEscuro"/>-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/idObservacoes"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:hint="Observações"-->
+<!--            android:textColorHint="@color/blackhint"-->
+<!--            android:fontFamily="@font/gabrielaregular"-->
+<!--            android:backgroundTint="@color/VerdeEscuro"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/idBtnEscolherMesa"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            android:background="@drawable/custom_button_login"-->
+<!--            android:text="Escolher Mesa"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:fontFamily="@font/gabrielaregular"/>-->
+<!--    </LinearLayout>-->
