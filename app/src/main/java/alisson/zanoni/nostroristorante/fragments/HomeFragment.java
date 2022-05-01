@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
     TextView textUsuarioLogado;
     Button btnMenu;
     UsuarioFireBaseRepository fireBaseRepository;
-    ImageSlider imageSlider;
+    ImageSlider imageSlider,imageSlider2;
 
     private String mParam1;
     private String mParam2;
@@ -68,17 +68,27 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         textUsuarioLogado = view.findViewById(R.id.usuarioLogado);
         imageSlider = getView().findViewById(R.id.image_slider);
+        imageSlider2 = getView().findViewById(R.id.image_slider2);
 
         List<SlideModel> slideModelList=new ArrayList<>();
 
-        slideModelList.add(new SlideModel(R.drawable.primeiraimg));
-        slideModelList.add(new SlideModel(R.drawable.segundaimg));
-        slideModelList.add(new SlideModel(R.drawable.terceiraimg));
-        slideModelList.add(new SlideModel(R.drawable.quartaimg));
-        slideModelList.add(new SlideModel(R.drawable.quintaimg));
-        slideModelList.add(new SlideModel(R.drawable.sextaimg));
+        slideModelList.add(new SlideModel(R.drawable.aaponataallasiciliana));
+        slideModelList.add(new SlideModel(R.drawable.camaraoenvoltoempancettacomespetodealecrim));
+        slideModelList.add(new SlideModel(R.drawable.polentacremosa));
+        slideModelList.add(new SlideModel(R.drawable.saladacaprese));
+        slideModelList.add(new SlideModel(R.drawable.costela));
 
         imageSlider.setImageList(slideModelList,true);
+
+        List<SlideModel> slideModelList2=new ArrayList<>();
+
+        slideModelList2.add(new SlideModel(R.drawable.primeiraimg));
+        slideModelList2.add(new SlideModel(R.drawable.segundaimg));
+        slideModelList2.add(new SlideModel(R.drawable.terceiraimg));
+
+        imageSlider2.setImageList(slideModelList2,true);
+
+
     }
 
     @Override
