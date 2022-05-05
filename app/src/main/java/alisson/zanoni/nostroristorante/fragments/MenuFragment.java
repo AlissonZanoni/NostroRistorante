@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import alisson.zanoni.nostroristorante.CardapioActivity;
+import alisson.zanoni.nostroristorante.ContatoActivity;
 import alisson.zanoni.nostroristorante.MenuReservaActivity;
 import alisson.zanoni.nostroristorante.R;
 
@@ -22,7 +23,7 @@ public class MenuFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    LinearLayout btnCardapio, btnReservaCancelamento;
+    LinearLayout btnCardapio, btnReservaCancelamento, btnContato;
 
     private String mParam1;
     private String mParam2;
@@ -55,9 +56,11 @@ public class MenuFragment extends Fragment {
 
         btnCardapio = view.findViewById(R.id.BtnCardapio);
         btnReservaCancelamento = view.findViewById(R.id.BtnReservaCancelamento);
+        btnContato = view.findViewById(R.id.BtnContato);
 
         btnCardapio.setOnClickListener(v -> trocarDeTela(CardapioActivity.class));
         btnReservaCancelamento.setOnClickListener(v -> trocarDeTela(MenuReservaActivity.class));
+        btnContato.setOnClickListener(v -> trocarDeTela(ContatoActivity.class));
     }
 
     @Override
