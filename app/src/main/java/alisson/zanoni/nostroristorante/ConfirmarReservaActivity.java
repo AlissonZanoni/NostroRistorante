@@ -19,7 +19,7 @@ public class ConfirmarReservaActivity extends AppCompatActivity {
     Button btnConfirmarReserva;
     ReservaFireBaseRepository reservaFireBaseRepository;
     MesaFireBaseRepository mesaFireBaseRepository;
-    TextView txtDataReserva, txfQtdPessoas, txfCadeiraBebe,txfObservacoes;
+    TextView txtDataReserva, txfQtdPessoas,txfObservacoes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,6 @@ public class ConfirmarReservaActivity extends AppCompatActivity {
         mesaFireBaseRepository = new MesaFireBaseRepository();
         txtDataReserva = findViewById(R.id.confirmarDataReserva);
         txfQtdPessoas = findViewById(R.id.confirmarQtdPessoas);
-        txfCadeiraBebe = findViewById(R.id.confirmarPrecisaCadeiraBebe);
         txfObservacoes = findViewById(R.id.confirmarObservacoes);
         btnConfirmarReserva = findViewById(R.id.idBtnConfirmarReserva);
 
@@ -38,16 +37,14 @@ public class ConfirmarReservaActivity extends AppCompatActivity {
         Bundle params = intent.getExtras();
         String data = params.getString("data");
         int qtdPessoas = params.getInt("qtdPessoas");
-        Boolean cadeiraBebe = params.getBoolean("precisaCadeiraBebe");
         String observacoes = params.getString("observacoes");
         int mesa = params.getInt("mesa");
         String idUsuario = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String idReserva = idUsuario + "-" + mesa;
-        Reserva reserva = new Reserva(idReserva, data, qtdPessoas, cadeiraBebe, observacoes, idUsuario, mesa);
+        Reserva reserva = new Reserva(idReserva, data, qtdPessoas, observacoes, idUsuario, mesa);
 
         txtDataReserva.setText(data);
         txfQtdPessoas.setText(Integer.toString(qtdPessoas));
-        txfCadeiraBebe.setText(cadeiraBebe.toString());
         txfObservacoes.setText(observacoes);
 
         btnConfirmarReserva.setOnClickListener(view -> {

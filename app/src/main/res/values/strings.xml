@@ -51,11 +51,4 @@
     <!--Reservas-->
     <string name="msgReservar">Cião! Digite as informações abaixo \n para realizar sua reserva</string>
 
-    <!--Spinner-->
-    <string-array name="Spinner_Itens">
-        <item>Sim</item>
-        <item>Não</item>
-    </string-array>
-
-
 </resources>

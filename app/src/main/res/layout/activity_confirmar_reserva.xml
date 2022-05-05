@@ -33,16 +33,6 @@
             android:textSize="14sp"/>
 
         <TextView
-            android:id="@+id/confirmarPrecisaCadeiraBebe"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:textColor="@color/black"
-            android:text=""
-            android:fontFamily="@font/gabrielaregular"
-            android:layout_gravity="center_vertical"
-            android:textSize="14sp"/>
-
-        <TextView
             android:id="@+id/confirmarObservacoes"
             android:layout_width="match_parent"
             android:layout_height="50dp"
