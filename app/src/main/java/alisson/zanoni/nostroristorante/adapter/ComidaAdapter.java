@@ -43,10 +43,10 @@ public class ComidaAdapter extends BaseAdapter {
         }
 
         TextView nomeComida = convertView.findViewById(R.id.idNomeComida);
-        nomeComida.setText("Nome: " + ((Comida)getItem(position)).getNome());
+        nomeComida.setText(((Comida)getItem(position)).getNome());
 
         TextView descricaoComida = convertView.findViewById(R.id.idDescricaoComida);
-        descricaoComida.setText("Descrição: " + ((Comida)getItem(position)).getDescricao());
+        descricaoComida.setText(((Comida)getItem(position)).getDescricao());
 
         TextView precoComida = convertView.findViewById(R.id.idPrecoComida);
         precoComida.setText("Preço: " + ((Comida)getItem(position)).getPreco());
