@@ -4,17 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import alisson.zanoni.nostroristorante.adapter.ComidaAdapter;
 import alisson.zanoni.nostroristorante.model.Comida;
 import alisson.zanoni.nostroristorante.repository.ComidaFireBaseRepository;
 
 public class CardapioTipoActivity extends AppCompatActivity {
 
-    private ListView listaAndroid;
+    private ListView listaComida;
+    private ArrayList<Comida> list = new ArrayList<>();
+    private ComidaAdapter adapter;
     ComidaFireBaseRepository comidaRepository;
 
     @Override
@@ -22,7 +25,7 @@ public class CardapioTipoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cardapio_tipo);
 
-        listaAndroid = findViewById(R.id.listaComidas);
+        listaComida = findViewById(R.id.listaComidas);
 
         comidaRepository = new ComidaFireBaseRepository();
         Intent intent = getIntent();
@@ -33,8 +36,11 @@ public class CardapioTipoActivity extends AppCompatActivity {
 
             @Override
             public void onCallback(List<Comida> comidas) {
-                ArrayAdapter<Comida> adapter = new ArrayAdapter<Comida>(CardapioTipoActivity.this, android.R.layout.simple_list_item_1, comidas);
-                listaAndroid.setAdapter(adapter);
+                for(Comida comida : comidas) {
+                    list.add(comida);
+                }
+                adapter = new ComidaAdapter(CardapioTipoActivity.this, list);
+                listaComida.setAdapter(adapter);
             }
         });
     }

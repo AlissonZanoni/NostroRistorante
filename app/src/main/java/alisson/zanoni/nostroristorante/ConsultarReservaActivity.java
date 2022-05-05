@@ -9,14 +9,18 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import alisson.zanoni.nostroristorante.adapter.ReservaAdapter;
 import alisson.zanoni.nostroristorante.model.Reserva;
 import alisson.zanoni.nostroristorante.repository.ReservaFireBaseRepository;
 
 public class ConsultarReservaActivity extends AppCompatActivity {
 
     private ListView listaReservas;
+    private ReservaAdapter adapter;
+    private ArrayList<Reserva> list = new ArrayList<>();
     TextView listaVaziaConsultaReserva;
     ReservaFireBaseRepository reservaFireBaseRepository;
 
@@ -37,8 +41,10 @@ public class ConsultarReservaActivity extends AppCompatActivity {
                 if(reservas.size() == 0){
                     listaVaziaConsultaReserva.setText("Você não possui reservas.");
                 } else {
-                    listaVaziaConsultaReserva.setText("Reservas ativas:");
-                    ArrayAdapter<Reserva> adapter = new ArrayAdapter<Reserva>(ConsultarReservaActivity.this, android.R.layout.simple_list_item_1, reservas);
+                    for(Reserva reserva : reservas) {
+                        list.add(reserva);
+                    }
+                    adapter = new ReservaAdapter(ConsultarReservaActivity.this,list);
                     listaReservas.setAdapter(adapter);
                 }
             }

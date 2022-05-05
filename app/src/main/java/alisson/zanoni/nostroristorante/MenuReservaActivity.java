@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MenuReservaActivity extends AppCompatActivity {
 
-    Button btnReservar, btnConsultarReserva, btnCancelarReserva;
+    LinearLayout btnReservar, btnConsultarReserva, btnCancelarReserva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

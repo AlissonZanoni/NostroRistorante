@@ -13,15 +13,23 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import alisson.zanoni.nostroristorante.adapter.ComidaAdapter;
+import alisson.zanoni.nostroristorante.adapter.ReservaAdapter;
+import alisson.zanoni.nostroristorante.model.Comida;
 import alisson.zanoni.nostroristorante.model.Reserva;
 import alisson.zanoni.nostroristorante.repository.MesaFireBaseRepository;
 import alisson.zanoni.nostroristorante.repository.ReservaFireBaseRepository;
 
 public class CancelarReservaActivity extends AppCompatActivity {
 
+
     private ListView listaReservasCancelar;
+    private ReservaAdapter adapter;
+    private ArrayList<Reserva> list = new ArrayList<>();
+
     TextView listaVaziaCancelarReserva;
     ReservaFireBaseRepository reservaFireBaseRepository;
     MesaFireBaseRepository mesaFireBaseRepository;
@@ -39,13 +47,16 @@ public class CancelarReservaActivity extends AppCompatActivity {
         String idUsuario =  FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         reservaFireBaseRepository.getReservasPorUsuario(idUsuario, new ReservaFireBaseRepository.callbackReservaPorUsuario() {
+
             @Override
             public void onCallback(List<Reserva> reservas) {
                 if(reservas.size() == 0){
                     listaVaziaCancelarReserva.setText("Você não possui reservas.");
                 } else {
-                    listaVaziaCancelarReserva.setText("Reservas ativas:");
-                    ArrayAdapter<Reserva> adapter = new ArrayAdapter<Reserva>(CancelarReservaActivity.this, android.R.layout.simple_list_item_1, reservas);
+                    for(Reserva reserva : reservas) {
+                        list.add(reserva);
+                    }
+                    adapter = new ReservaAdapter(CancelarReservaActivity.this,list);
                     listaReservasCancelar.setAdapter(adapter);
                 }
             }

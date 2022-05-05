@@ -4,7 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CardapioTipoActivity">
+    tools:context=".CardapioTipoActivity"
+    android:background="@color/FundoClaro">
+
+        <!--Header-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/VerdeEscuro">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cardapioTitle"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/gabrielaregular"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/imgheader"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="230dp"/>
+        </LinearLayout>
+
 
         <ListView
             android:id="@+id/listaComidas"
