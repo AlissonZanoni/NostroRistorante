@@ -4,20 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import alisson.zanoni.nostroristorante.adapter.ComidaAdapter;
+import alisson.zanoni.nostroristorante.adapter.MesaAdapter;
+import alisson.zanoni.nostroristorante.model.Comida;
 import alisson.zanoni.nostroristorante.model.Mesa;
 import alisson.zanoni.nostroristorante.repository.MesaFireBaseRepository;
 
 public class MesaReserva extends AppCompatActivity {
 
-    private ListView listaAndroid;
+    private ListView listaMesa;
+    private ArrayList<Mesa> list = new ArrayList<>();
+    private MesaAdapter adapter;
     MesaFireBaseRepository mesaFireBaseRepository;
     public static final int telaMesaReservaParams = 3;
 
@@ -26,7 +33,7 @@ public class MesaReserva extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesa_reserva);
 
-        listaAndroid = findViewById(R.id.listaMesas);
+        listaMesa = findViewById(R.id.listaMesas);
         mesaFireBaseRepository = new MesaFireBaseRepository();
 
         Intent intent = getIntent();
@@ -36,16 +43,23 @@ public class MesaReserva extends AppCompatActivity {
 
             @Override
             public void onCallback(List<Mesa> mesas) {
-                ArrayAdapter<Mesa> adapter = new ArrayAdapter<Mesa>(MesaReserva.this, android.R.layout.simple_list_item_1, mesas);
-                listaAndroid.setAdapter(adapter);
+                for(Mesa mesa : mesas) {
+
+                    if(mesa.getStatus().equals(false)){
+                        list.add(mesa);
+                    }
+                }
+
+                adapter = new MesaAdapter(MesaReserva.this, list);
+                listaMesa.setAdapter(adapter);
             }
         });
 
-        listaAndroid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaMesa.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Mesa mesaEscolhida = (Mesa) listaAndroid.getItemAtPosition(i);
+                Mesa mesaEscolhida = (Mesa) listaMesa.getItemAtPosition(i);
                 if(mesaEscolhida.getStatus()) {
                     Toast.makeText(MesaReserva.this, "Esta mesa já está reservada, por favor selecione outra.", Toast.LENGTH_SHORT).show();
                     return;

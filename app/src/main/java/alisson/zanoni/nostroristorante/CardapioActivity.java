@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class CardapioActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnEntrada, btnAcompanhamento, btnMassa, btnRisoto, btnCarne, btnDoce, btnBebida, btnVinho, btnCerveja;
-    public static final int telaParams = 1;
+    LinearLayout btnEntrada, btnAcompanhamento, btnMassa, btnRisoto, btnCarne, btnDoce, btnBebida, btnVinho, btnCerveja;
+
     Bundle params;
 
     @Override
@@ -75,7 +76,6 @@ public class CardapioActivity extends AppCompatActivity implements View.OnClickL
         params.putString("tipo", tipo);
         Intent trocarTela = new Intent(CardapioActivity.this,CardapioTipoActivity.class);
         trocarTela.putExtras(params);
-        startActivityForResult(trocarTela, telaParams);
-        finish();
+        startActivity(trocarTela);
     }
 }

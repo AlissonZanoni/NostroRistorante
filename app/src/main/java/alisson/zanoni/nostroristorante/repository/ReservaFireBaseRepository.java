@@ -42,7 +42,6 @@ public class ReservaFireBaseRepository {
                     reserva.setIdUsuario(dataSnapshot.child("idUsuario").getValue().toString());
                     reserva.setNumeracaoMesa(Integer.parseInt(dataSnapshot.child("numeracaoMesa").getValue().toString()));
                     reserva.setObservacoes(dataSnapshot.child("observacoes").getValue().toString());
-                    reserva.setPrecisaCadeirinhaBebe(Boolean.parseBoolean(dataSnapshot.child("precisaCadeirinhaBebe").getValue().toString()));
                     reserva.setQuantidadePessoas(Integer.parseInt(dataSnapshot.child("quantidadePessoas").getValue().toString()));
                     reservas.add(reserva);
                 }

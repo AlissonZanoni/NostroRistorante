@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContatoActivity"
+    android:background="@color/FundoClaro"
+    android:orientation="vertical">
+
+    <!--Header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/VerdeEscuro">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contato"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/gabrielaregular"
+            android:layout_gravity="center"
+            android:textSize="18sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginRight="20dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/imgheader"
+                android:layout_gravity="center"
+                android:layout_marginStart="230dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/contatoimg"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço:"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/Vermelho"
+        android:fontFamily="@font/gabrielaregular"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/VerdeEscuro"
+        android:fontFamily="@font/gabrielaregular"
+        android:text="Avenida Santos Dumont, 2485 - São Luiz,\nCriciúma - SC"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:fontFamily="@font/gabrielaregular"
+        android:textColor="@color/Vermelho"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone:"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/telephoneicon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/gabrielaregular"
+            android:text="(48) 3333-3333"
+            android:textColor="@color/VerdeEscuro"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/whatsicon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/gabrielaregular"
+            android:text="(48) 9 9999-9999"
+            android:textColor="@color/VerdeEscuro"
+            android:layout_marginTop="3dp"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:textStyle="bold"
+        android:fontFamily="@font/gabrielaregular"
+        android:textColor="@color/Vermelho"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-mail:"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/gabrielaregular"
+        android:text="contato@nostroristorante.com.br"
+        android:textColor="@color/VerdeEscuro"
+        android:layout_marginTop="3dp"/>
+
+</LinearLayout>
