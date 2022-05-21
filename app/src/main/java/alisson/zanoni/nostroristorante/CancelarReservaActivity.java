@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,9 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.ArrayList;
 import java.util.List;
 
-import alisson.zanoni.nostroristorante.adapter.ComidaAdapter;
 import alisson.zanoni.nostroristorante.adapter.ReservaAdapter;
-import alisson.zanoni.nostroristorante.model.Comida;
 import alisson.zanoni.nostroristorante.model.Reserva;
 import alisson.zanoni.nostroristorante.repository.MesaFireBaseRepository;
 import alisson.zanoni.nostroristorante.repository.ReservaFireBaseRepository;

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class MenuReservaActivity extends AppCompatActivity {
@@ -28,6 +27,5 @@ public class MenuReservaActivity extends AppCompatActivity {
     public void trocarDeTela(Class tela){
         Intent trocarTela = new Intent(MenuReservaActivity.this, tela);
         startActivity(trocarTela);
-        finish();
     }
 }

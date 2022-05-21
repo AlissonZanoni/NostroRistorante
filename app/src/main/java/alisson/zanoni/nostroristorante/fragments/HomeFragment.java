@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +30,6 @@ public class HomeFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     TextView textUsuarioLogado;
-    Button btnMenu;
     UsuarioFireBaseRepository fireBaseRepository;
     ImageSlider imageSlider,imageSlider2;
 
@@ -87,8 +85,6 @@ public class HomeFragment extends Fragment {
         slideModelList2.add(new SlideModel(R.drawable.terceiraimg));
 
         imageSlider2.setImageList(slideModelList2,true);
-
-
     }
 
     @Override

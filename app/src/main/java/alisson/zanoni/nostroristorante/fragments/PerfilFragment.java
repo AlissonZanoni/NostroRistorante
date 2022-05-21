@@ -77,7 +77,6 @@ public class PerfilFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        //Metodo para deslogar
         btnDesconectar.setOnClickListener(view -> {
         FirebaseAuth.getInstance().signOut();
         trocarDeTela(LoginActivity.class); });

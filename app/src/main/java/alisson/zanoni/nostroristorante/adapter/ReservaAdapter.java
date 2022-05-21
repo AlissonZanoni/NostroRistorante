@@ -9,7 +9,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import alisson.zanoni.nostroristorante.R;
-import alisson.zanoni.nostroristorante.model.Comida;
 import alisson.zanoni.nostroristorante.model.Reserva;
 
 public class ReservaAdapter extends BaseAdapter {

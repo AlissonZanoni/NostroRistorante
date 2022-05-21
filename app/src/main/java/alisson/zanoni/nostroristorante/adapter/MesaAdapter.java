@@ -10,7 +10,6 @@ import java.util.List;
 
 import alisson.zanoni.nostroristorante.R;
 import alisson.zanoni.nostroristorante.model.Mesa;
-import alisson.zanoni.nostroristorante.model.Reserva;
 
 public class MesaAdapter extends BaseAdapter {
 
